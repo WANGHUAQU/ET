@@ -1,7 +1,7 @@
 ﻿using System;
-using ETModel;
 
-namespace ETHotfix
+
+namespace ET
 {
     [ObjectSystem]
     public class ActorLocationSenderComponentAwakeSystem : AwakeSystem<ActorLocationSenderComponent>
@@ -29,7 +29,7 @@ namespace ETHotfix
     
     public static class ActorLocationSenderComponentSystem
     {
-        public static void Check(this ActorLocationSenderComponent self)
+        public static void Check(this ActorLocationSenderComponent self, bool isTimeOut)
         {
             using (ListComponent<long> list = EntityFactory.Create<ListComponent<long>>(self.Domain))
             {

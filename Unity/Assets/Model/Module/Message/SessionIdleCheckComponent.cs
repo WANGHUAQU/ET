@@ -1,4 +1,4 @@
-﻿namespace ETModel
+﻿namespace ET
 {
     [ObjectSystem]
     public class SessionIdleCheckerComponentAwakeSystem : AwakeSystem<SessionIdleCheckerComponent, int, int, int>
@@ -41,7 +41,7 @@
     
     public static class SessionIdleCheckerComponentSystem
     {
-        public static void Check(this SessionIdleCheckerComponent self)
+        public static void Check(this SessionIdleCheckerComponent self, bool isTimeOut)
         {
             Session session = self.GetParent<Session>();
             long timeNow = TimeHelper.Now();
